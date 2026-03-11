@@ -7,7 +7,7 @@ export const Header = () => {
         <div className="logo-container">
           <MeteorLogo className="logo" />
         </div>
-        <h1 className="page-title">Welcome to Meteor!</h1>
+        <h1 className="page-title">StudyFlow</h1>
       </nav>
     </div>
   );

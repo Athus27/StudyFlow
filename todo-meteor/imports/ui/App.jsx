@@ -3,6 +3,7 @@ import { Header } from "./Header.jsx";
 import { Info } from "./Info.jsx";
 // todo-meteor\temp\react-tests\TestTask.jsx
 import { TestTask } from "../../temp/react-tests/TestTask.jsx";
+import { Login } from "./pages/Login.jsx";
 
 // tudo depois do => é o que a função retorna
 
@@ -12,8 +13,8 @@ export const App = () => (
     <Header />
     <main className="main">
       <Counter />
+      <Login />
       <Info />
-      <TestTask />
     </main>
   </div>
 );
