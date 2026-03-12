@@ -2,18 +2,29 @@
 
 :root {
   /* Colors */
-  --color-background: hsl(210, 20%, 98%);
-  --color-foreground: hsl(220, 20%, 15%);
+  /* --color-background: hsl(210, 20%, 98%);
   --color-card: hsl(0, 0%, 100%);
-  --color-primary: hsl(4, 70%, 55%);
-  --color-primary-hover: hsl(4, 70%, 45%);
-  --color-muted: hsl(220, 10%, 50%);
-  --color-border: hsl(220, 14%, 90%);
+  --color-primary: hsl(4, 70%, 55%); */
 
-  /* Shadows */
-  --shadow-card: 0 1px 3px 0 hsl(220 20% 15% / 0.04),
-    0 1px 2px -1px hsl(220 20% 15% / 0.04);
-  --shadow-card-hover: 0 10px 15px -3px hsl(220 20% 15% / 0.08),
+  /* Base */
+  --color-background: #f3f5f8; /* 60 
+  --color-background: #f3f5f8; /* 60 → fundo */
+  --color-card: #b7c6d4; /* 30 → seções */
+  --color-primary: #50667a; /* 10 → destaque */
+
+  /* Texto */
+  --color-foreground: #2f3a44; /* texto principal */
+  --color-muted: #6b7b8c; /* texto secundário */
+
+  /* Interações */
+  --color-primary-hover: #5f7f9a;
+
+  /* UI */
+  --color-border: #d6dee6;
+  --shadow-card:
+    0 1px 3px 0 hsl(220 20% 15% / 0.04), 0 1px 2px -1px hsl(220 20% 15% / 0.04);
+  --shadow-card-hover:
+    0 10px 15px -3px hsl(220 20% 15% / 0.08),
     0 4px 6px -4px hsl(220 20% 15% / 0.04);
 
   /* Spacing */
@@ -44,7 +55,12 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     sans-serif;
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -219,7 +235,8 @@ a {
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color var(--transition-normal),
+  transition:
+    background-color var(--transition-normal),
     transform var(--transition-fast);
 }
 
@@ -265,7 +282,8 @@ a {
 
 .resource-card {
   padding: 1.25rem;
-  transition: box-shadow var(--transition-slow),
+  transition:
+    box-shadow var(--transition-slow),
     transform var(--transition-slow);
 }
 
@@ -295,7 +313,9 @@ a {
   height: 1rem;
   color: var(--color-muted);
   opacity: 0;
-  transition: opacity var(--transition-fast), color var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .resource-link:hover .resource-icon {

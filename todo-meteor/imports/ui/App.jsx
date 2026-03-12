@@ -12,9 +12,7 @@ export const App = () => (
   <div className="page">
     <Header />
     <main className="main">
-      <Counter />
       <Login />
-      <Info />
     </main>
   </div>
 );

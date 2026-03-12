@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/local_collection_driver.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/collection_extensions.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/collection.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/asynchronous_cursor.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/doc_fetcher.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/mongo_common.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/mongo_connection.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/mongo_driver.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/mongo_utils.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/oplog_observe_driver.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/collection_utils.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/methods_async.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/methods_index.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/methods_replication.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/mongo/2.2.0/web.browser/collection/methods_sync.js"
+      ],
+      "meteor/reactive-var": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/reactive-var/1.0.13/web.browser/reactive-var.js"
+      ],
+      "meteor/es5-shim": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/es5-shim/4.8.1/web.browser/client.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/es5-shim/4.8.1/web.browser/console.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/es5-shim/4.8.1/web.browser/cordova.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/es5-shim/4.8.1/web.browser/export_globals.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/es5-shim/4.8.1/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/ecmascript/0.17.0/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/shell-server/0.7.0/web.browser/main.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/shell-server/0.7.0/web.browser/shell-server.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/hot-module-replacement/0.5.4/web.browser/hot-api.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/hot-module-replacement/0.5.4/web.browser/client.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
+      ],
+      "meteor/react-meteor-data": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/react-meteor-data/4.0.1/web.browser/suspense/index.js"
+      ],
+      "meteor/rspack": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/rspack_plugin.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/rspack_server.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/build-context.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/compilation.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/config.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/constants.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/dependencies.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/rspack/1.0.0/web.browser/lib/processes.js"
+      ],
+      "meteor/accounts-password": [
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/accounts-password/3.2.2/web.browser/password_client.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/accounts-password/3.2.2/web.browser/email_templates.js",
+        "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/accounts-password/3.2.2/web.browser/password_server.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}

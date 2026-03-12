@@ -1,4 +1,121 @@
+/* =========================
+   COLORS
+========================= */
+:root {
+  --color-background: #f3f5f8; /* 60 → fundo */
+  --color-card: #b7c6d4; /* 30 → seções */
+  --color-primary: #50667a; /* 10 → destaque */
+  --color-input-form: #e2e8f0; /* 10 → destaque */
+}
+
+/* =========================
+   FONTS
+========================= */
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../imports/ui/assets/fonts/quicksand/Quicksand-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../imports/ui/assets/fonts/quicksand/Quicksand-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../imports/ui/assets/fonts/quicksand/Quicksand-Bold.ttf");
+  font-weight: 700;
+}
+
+/* =========================
+   BASE
+========================= */
+
 body {
   padding: 10px;
-  font-family: sans-serif;
+  font-family: "Quicksand" !important;
+}
+
+h1 {
+  font-weight: 700 !important;
+}
+
+a {
+  font-weight: 700 !important;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  padding-right: 5%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================
+    PÁGINA DE LOGIN
+========================= */
+.login-page {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+}
+
+.input {
+  border: 0;
+  background-color: var(--color-input-form);
+  padding: 16px;
+  border-radius: 32px;
+  border: 1px solid #d0d6dc;
+}
+
+.button {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 32px;
+  border: 1px solid #d0d6dc;
+}
+.button:hover {
+  background: #3f566b;
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.text-center {
+  text-align: center;
 }
