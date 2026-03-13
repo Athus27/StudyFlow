@@ -113,6 +113,43 @@ a {
 }
 
 /* =========================
+   dashboard
+========================= */
+.dashboard-header{
+  padding-top: 5%;
+}
+
+.dashboard-header-informations{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-table {
+  width: fit-content;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-bottom: 1px solid black;
+}
+
+.dashboard .task-table:last-child {
+  border: none!important;
+}
+
+.task-table th,
+.task-table td {
+  width: 150px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.dashboard {
+  background-color: var(--color-card);
+  border-radius: 20px;
+}
+
+/* =========================
    UTILIDADES
 ========================= */
 

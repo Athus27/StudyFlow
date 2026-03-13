@@ -1,6 +1,7 @@
 import React from "react";
 import { Meteor } from "meteor/meteor";
 
+
 const handleLogin = (event) => {
   // impede o comportamento padrão do navegador.que seria recarregar a página
   event.preventDefault();
