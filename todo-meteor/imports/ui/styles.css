@@ -99,14 +99,15 @@ a {
 .header {
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-card);
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
 }
 
-.nav {
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 4rem;
+  gap: 32px;
 }
 
 .logo-container {

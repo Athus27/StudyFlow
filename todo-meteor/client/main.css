@@ -35,7 +35,7 @@
 ========================= */
 
 body {
-  padding: 10px;
+  /* padding: 10px; */
   font-family: "Quicksand" !important;
 }
 
@@ -52,15 +52,26 @@ a {
 ========================= */
 
 .header {
+  width: auto;
   display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  border-radius: 8px;
+  flex-direction: row;
+  justify-content: center;
 }
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  /* border-radius: 50%; */
+} 
 
 /* =========================
    NAVEGAÇÃO
 ========================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .nav-list {
   display: flex;
@@ -77,9 +88,9 @@ a {
 }
 
 /* =========================
-    PÁGINA DE LOGIN
+    PÁGINA DE LOGIN E REGISTER
 ========================= */
-.login-page {
+.user-page {
   padding-top: 32px;
   display: flex;
   flex-direction: column;
@@ -87,7 +98,7 @@ a {
   align-items: center;
 }
 
-.login-form {
+.input-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -115,11 +126,11 @@ a {
 /* =========================
    dashboard
 ========================= */
-.dashboard-header{
+.dashboard-header {
   padding-top: 5%;
 }
 
-.dashboard-header-informations{
+.dashboard-header-informations {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -134,7 +145,7 @@ a {
 }
 
 .dashboard .task-table:last-child {
-  border: none!important;
+  border: none !important;
 }
 
 .task-table th,

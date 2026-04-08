@@ -1,13 +1,21 @@
 import React from "react";
+
+const handleUserClick = () => {
+  // Lógica para lidar com o clique no ícone do usuário
+  console.log("User icon clicked!");
+  
+}
+
+
 export const Header = () => {
   return (
     <div className="header">
-      <nav className="nav container">
+      <nav className="nav-container">
         <div className="logo-container">
           <img src="/logo.svg" className="logo" />
-          <h1 className="logo-text">StudyFlow</h1>
+          <h1 >StudyFlow</h1>
         </div>
-
+        {/* 
         <ul className="nav-list">
           <li className="nav-item">
             <a href="/" className="nav-link">
@@ -27,7 +35,8 @@ export const Header = () => {
             </a>
           </li>
         </ul>
-        <a>Login</a>
+        */} 
+        <a><img src="/user-icon.png" alt="User" className="user-icon" onClick={handleUserClick} /></a>
       </nav>
     </div>
   );
