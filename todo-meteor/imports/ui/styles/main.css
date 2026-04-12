@@ -157,6 +157,21 @@ a {
   opacity: 0.8;
 }
 
+.user-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
 /* ============ Main Content ============ */
 .main {
   padding-top: var(--spacing-xl);

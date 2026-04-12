@@ -1,22 +1,28 @@
-import { Link } from "react-router-dom";
+// erro: useEffect dentro de função (proibido) + return null inútil
+// correto (profissional)
+
 import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
-import { Header } from "../Header";
+import { Header } from "../components/common/Header";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
-  /** @param {React.FormEvent<HTMLFormElement>} event */
+  /** @param {HTMLFormElement} event */
   const handleLogin = (event) => {
     event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
-    const username = String(formData.get("username"))
-    const password = String(formData.get("password"))
+    const username = String(formData.get("username"));
+    const password = String(formData.get("password"));
 
     Meteor.loginWithPassword(username, password, (err) => {
       if (err) {
-        setError(err.message); 
+        setError(err.message);
       } else {
         console.log("login efetuado com sucesso");
+        navigate("/dashboard"); 
       }
     });
   };
@@ -29,23 +35,11 @@ export const Login = () => {
         <h1 className="text-center">Enter Your Credentials</h1>
 
         <form className="input-form" onSubmit={handleLogin}>
-          <input
-            className="input"
-            type="text"
-            name="username"
-            placeholder="Username"
-          />
+          <input className="input" type="text" name="username" placeholder="Username" />
+          <input className="input" type="password" name="password" placeholder="Password" />
 
-          <input
-            className="input"
-            type="password"
-            name="password"
-            placeholder="Password"
-          />
+          <button className="button" type="submit">Login</button>
 
-          <button className="button" type="submit">
-            Login
-          </button>
           <Link to="/register" className="link-style">
             Não cadastrado? Clique aqui para registrar-se
           </Link>
@@ -56,4 +50,3 @@ export const Login = () => {
     </div>
   );
 };
-console.log(Meteor.userId());

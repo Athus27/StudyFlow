@@ -1,10 +1,10 @@
 import { Meteor } from "meteor/meteor";
 
-import { LinksCollection } from "/imports/api/links";
-import { Random } from "meteor/random";
+import { LinksCollection } from "../imports/api/collections/links";
+import "./methods";
+import "./publications";
 
-import "../imports/api/users/usersMethods";
-
+/** @param {{ title: string, url: string }} param0 */
 async function insertLink({ title, url }) {
   await LinksCollection.insertAsync({ title, url, createdAt: new Date() });
 }
@@ -43,15 +43,4 @@ Meteor.startup(async () => {
     });
   }
 
-  // We publish the entire Links collection to all clients.
-  // In order to be fetched in real-time to the clients
-  Meteor.publish("links", function () {
-    return LinksCollection.find();
-  });
-});
-
-Meteor.methods({
-  about() {
-    return `This is a Meteor application running React with React Router. this is a generated id: ${Random.id()}`;
-  },
 });

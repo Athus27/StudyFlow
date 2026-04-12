@@ -1,13 +1,14 @@
 import React from "react";
-
-const handleUserClick = () => {
-  // Lógica para lidar com o clique no ícone do usuário
-  console.log("User icon clicked!");
-  
-}
+import { useNavigate } from "react-router-dom";
 
 
 export const Header = () => {
+  const navigate = useNavigate();
+
+  const handleUserClick = () => {
+    navigate("/user");
+  };
+
   return (
     <div className="header">
       <nav className="nav-container">
@@ -36,7 +37,9 @@ export const Header = () => {
           </li>
         </ul>
         */} 
-        <a><img src="/user-icon.png" alt="User" className="user-icon" onClick={handleUserClick} /></a>
+        <button type="button" className="user-button" onClick={handleUserClick} aria-label="Abrir página do usuário">
+          <img src="/user-icon.png" alt="User" className="user-icon" />
+        </button>
       </nav>
     </div>
   );

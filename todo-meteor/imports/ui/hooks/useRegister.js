@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Meteor } from "meteor/meteor";
-import { RegisterSchema } from "../../../api/schemas/user.schema";
+import { RegisterSchema } from "../../api/schemas/user.schema";
 
 const INITIAL_STATE = {
   error: "",
