@@ -3,28 +3,22 @@ import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { Dashboard } from "../pages/Dashboard";
 import { User } from "../pages/User";
-import { ProtectedRouted } from "./ProtectecRouted";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ProtectedRouted } from "./ProtectedRouted";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  { path: "/", element: <Login /> },
+  { path: "/register", element: <Register /> },
+  {
+    element: <ProtectedRouted />,
+    children: [
+      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/dashboards", element: <User /> },
+      { path: "/user", element: <User /> },
+    ],
+  },
+]);
 
 export const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/dashboard"
-          element={<ProtectedRouted>
-            <Dashboard/>
-          </ProtectedRouted>}
-        />
-        <Route
-          path="/user"
-          element={<ProtectedRouted>
-            <User />
-          </ProtectedRouted>}
-        />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 };

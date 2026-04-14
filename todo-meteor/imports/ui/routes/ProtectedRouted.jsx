@@ -1,16 +1,16 @@
 import React from "react";
 import { Meteor } from "meteor/meteor";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 /**
  * @param {{ children: React.ReactNode }} props
  */
-export const ProtectedRouted = ({ children }) => {
+export const ProtectedRouted = ({  }) => {
   const isAuthenticated = !!Meteor.userId();
 
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
 
-  return children;
+  return <Outlet />;
 };

@@ -6,3 +6,6 @@ _build
 */build-chunks
 .rsdoctor
 temp/
+
+# Copilot instructions
+.github/copilot-instructions.md
