@@ -12,6 +12,13 @@ const INITIAL_STATE = {
  * @param {string | undefined} reason
  * @returns {string}
  */
+
+
+//para ver os tipos de erros gerados, todos os possíveis erros que podem ser gerados, e como lidar com eles deve descobrir os erros que o Meteor pode gerar, quais são os códigos de erro e mensagens de erro, e criar um mapeamento para cada um deles, para mostrar mensagens mais amigáveis para o usuário. Como um dos devs do projeto não sabe vou escrever um tutorial:
+//1. Pesquise na documentação do Meteor os erros comuns relacionados ao registro de usuários, como "email-already-exists", "username-already-exists", "password-too-short", etc.
+//2. Crie um objeto de mapeamento (errorMap) onde as chaves são os códigos de erro do Meteor e os valores são as mensagens amigáveis que você deseja exibir para o usuário.
+//3. Implemente a função mapServerErrorCode que recebe o código de erro e a razão, e retorna a mensagem amigável correspondente. Se o código de erro não estiver no mapeamento, verifique se a razão contém uma mensagem específica e retorne uma mensagem genérica caso contrário.
+//4. Use essa função dentro do bloco catch do seu hook useRegister para lidar com os erros de forma consistente e fornecer feedback claro ao usuário sobre o que deu errado durante o processo de registro.
 const mapServerErrorCode = (code, reason) => {
   /** @type {Record<string, string>} */
   const errorMap = {

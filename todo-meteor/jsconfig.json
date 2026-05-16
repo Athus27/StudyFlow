@@ -66,15 +66,12 @@
         "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/accounts-password/3.2.2/web.browser/email_templates.js",
         "C:\\Users\\Athus\\AppData\\Local/.meteor/packages/accounts-password/3.2.2/web.browser/password_server.js"
       ]
-    }
+    },
+    "noImplicitAny": false
   },
   "typeAcquisition": {
     "include": [
       "meteor"
     ]
-  },
-  "exclude": [
-    "node_modules",
-    ".meteor"
-  ]
+  }
 }
