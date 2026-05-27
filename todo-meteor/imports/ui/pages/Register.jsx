@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRegister } from "../hooks/useRegister.js";
 import { RegisterPage } from "./Register/RegisterPage.jsx";
-
+import { carregarEstados } from "../../api/methods/city&State.js";
 export const Register = () => {
   const { register, error, loading } = useRegister();
+
+  useEffect(() => {
+    carregarEstados().catch((err) => {
+      console.error("[Register] failed to load states:", err);
+    });
+  }, []);
 
   /** @param {HTMLFormElement} formElement */
   const buildRegisterData = (formElement) => {

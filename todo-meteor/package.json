@@ -2,9 +2,13 @@
   "name": "todo-meteor",
   "private": true,
   "scripts": {
-    "start": "set MONGO_URL=mongodb://localhost:27017/studyflow_db && meteor run",
+    "start": "npm run dev",
+    "dev": "npm run tailwind:build && concurrently -k -n tailwind,meteor -c cyan,green \"npm run tailwind:watch\" \"npm run meteor\"",
+    "meteor": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "tailwind:build": "tailwindcss -i ./imports/ui/styles/tailwind.input.css -o ./imports/ui/styles/tailwind.generated.css --minify",
+    "tailwind:watch": "tailwindcss -i ./imports/ui/styles/tailwind.input.css -o ./imports/ui/styles/tailwind.generated.css --watch",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
@@ -19,13 +23,16 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@meteorjs/rspack": "^1.0.0",
-    "@rsdoctor/rspack-plugin": "^1.2.3",
+    "@meteorjs/rspack": "^2.0.1",
+    "@rsdoctor/rspack-plugin": "^1.5.7",
     "@rspack/cli": "^1.7.1",
     "@rspack/core": "^1.7.1",
     "@rspack/plugin-react-refresh": "^1.4.3",
     "@svgr/webpack": "^8.1.0",
-    "react-refresh": "^0.17.0"
+    "@tailwindcss/cli": "^4.3.0",
+    "concurrently": "^9.2.1",
+    "react-refresh": "^0.17.0",
+    "tailwindcss": "^4.3.0"
   },
   "meteor": {
     "mainModule": {

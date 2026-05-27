@@ -5,7 +5,7 @@
   --color-background: #f3f5f8; /* 60 → fundo */
   --color-card: #b7c6d4; /* 30 → seções */
   --color-primary: #50667a; /* 10 → destaque */
-  --color-input-form: #e2e8f0; /* 10 → destaque */
+  --color-input-form: #e6eaf0; /* 10 → destaque */
 }
 
 /* =========================
@@ -104,6 +104,8 @@ a {
   gap: 12px;
   width: 320px;
 }
+
+
 
 .input {
   border: 0;

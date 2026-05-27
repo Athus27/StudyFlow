@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { Meteor } from "meteor/meteor";
 import { App } from "/imports/ui/App";
+import "/imports/ui/styles/tailwind.generated.css";
 import "/imports/ui/styles/main.css";
 import "./main.css";
 
