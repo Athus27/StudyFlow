@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
+  //verificar se a url atual é a página de login ou registro para não mostrar o botão de usuário
+  const atual_url = window.location.href;
+  const shouldShowUserButton = !atual_url.includes("/register") && !atual_url.includes("/login");
 
   const handleUserClick = () => {
     navigate("/user");
@@ -37,9 +40,11 @@ export const Header = () => {
           </li>
         </ul>
         */} 
-        <button type="button" className="user-button" onClick={handleUserClick} aria-label="Abrir página do usuário">
-          <img src="/user-icon.png" alt="User" className="user-icon" />
-        </button>
+        {shouldShowUserButton && (
+          <button type="button" className="user-button" onClick={handleUserClick} aria-label="Abrir página do usuário">
+            <img src="/user-icon.png" alt="User" className="user-icon" />
+          </button>
+        )}
       </nav>
     </div>
   );
