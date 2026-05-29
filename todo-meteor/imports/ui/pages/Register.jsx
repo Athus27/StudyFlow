@@ -1,38 +1,68 @@
-import React, { useEffect } from "react";
+// src/pages/Register/Register.jsx
+import React, { useEffect, useState } from "react";
 import { useRegister } from "../hooks/useRegister.js";
 import { RegisterPage } from "./Register/RegisterPage.jsx";
-import { carregarEstados } from "../../api/methods/city&State.js";
+// Importe SOMENTE as funções que devolvem os dados da API
+import { recuperarListaDeEstados, recuperarListaDeCidades } from "../../api/methods/city&State.js";
+
 export const Register = () => {
-  const { register, error, loading } = useRegister();
+	const { register, error, loading } = useRegister();
 
-  useEffect(() => {
-    carregarEstados().catch((err) => {
-      console.error("[Register] failed to load states:", err);
-    });
-  }, []);
+	// 1. Estados para controlar a tela
+	const [estadoSelecionado, setEstadoSelecionado] = useState("");
+	const [listaEstados, setListaEstados] = useState([]);
+	const [listaCidades, setListaCidades] = useState([]);
 
-  /** @param {HTMLFormElement} formElement */
-  const buildRegisterData = (formElement) => {
-    const formData = new FormData(formElement);
+	// 2. Busca os estados ao carregar a página
+	useEffect(() => {
+		recuperarListaDeEstados()
+			.then((dados) => setListaEstados(dados)) // Salva no React
+			.catch((err) => console.error("[Register] falha ao carregar estados:", err));
+	}, []);
 
-    return {
-      username: String(formData.get("username")),
-      email: String(formData.get("email")),
-      password: String(formData.get("password")),
-      confirmPassword: String(formData.get("confirmPassword")),
-    };
-  };
+	/** @param {React.ChangeEvent<HTMLSelectElement>} event */
+	const handleEstadoChange = (event) => {
+		const estadoId = event.currentTarget.value;
 
-  /** @param {React.FormEvent<HTMLFormElement>} event */
-  const handleRegister = async (event) => {
-    event.preventDefault(); // impede reload da página (comportamento padrão do form)
+		setEstadoSelecionado(estadoId); // Libera o select de cidades na tela
+		if (!estadoId) return;
 
-    const result = await register(buildRegisterData(event.currentTarget));
+		// 3. Busca as cidades do estado selecionado
+		recuperarListaDeCidades(estadoId)
+			.then((dados) => setListaCidades(dados)) // Salva as cidades no React
+			.catch((err) => console.error("[Register] falha ao carregar cidades:", err));
+	};
 
-    if (result.success) {
-      event.currentTarget.reset();
-    }
-  };
+	/** @param {HTMLFormElement} formElement */
+	const buildRegisterData = (formElement) => {
+		const formData = new FormData(formElement);
+		return {
+			username: String(formData.get("username")),
+			email: String(formData.get("email")),
+			password: String(formData.get("password")),
+			confirmPassword: String(formData.get("confirmPassword"))
+		};
+	};
 
-  return <RegisterPage error={error} loading={loading} onSubmit={handleRegister} />;
+	/** @param {React.FormEvent<HTMLFormElement>} event */
+	const handleRegister = async (event) => {
+		event.preventDefault();
+		const result = await register(buildRegisterData(event.currentTarget));
+		if (result.success) {
+			event.currentTarget.reset();
+			setEstadoSelecionado("");
+		}
+	};
+
+	return (
+		<RegisterPage
+			error={error}
+			loading={loading}
+			onSubmit={handleRegister}
+			onEstadoChange={handleEstadoChange}
+			estadoSelecionado={estadoSelecionado}
+			listaEstados={listaEstados} // Enviando os arrays para o HTML
+			listaCidades={listaCidades}
+		/>
+	);
 };
