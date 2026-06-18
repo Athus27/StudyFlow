@@ -31,7 +31,7 @@ export async function carregarEstados() {
 		const { id, nome, sigla } = estado;
 		const item_option = document.createElement("option");
 		item_option.value = id;
-		item_option.innerText = nome;
+		item_option.innerText = sigla;
 		select_estados.appendChild(item_option);
 	}
 }
@@ -40,7 +40,7 @@ export async function recuperarListaDeCidades(estado_id) {
 	const URL_CIDADES = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado_id}/municipios`;
 	const response = await fetch(URL_CIDADES);
 	const cidades = await response.json();
-	console.log(cidades);
+	// console.log(cidades);
 	return cidades;
 }
 
@@ -68,5 +68,5 @@ export async function carregarCidades(estado_id) {
 		item_option.innerText = nome;
 		select_cidades.appendChild(item_option);
 	}
-	console.log(cidades);
+	// console.log(cidades);
 }

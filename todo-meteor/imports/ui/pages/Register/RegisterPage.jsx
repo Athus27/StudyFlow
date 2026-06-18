@@ -21,21 +21,21 @@ export const RegisterPage = ({
                     <input className="input rounded-[32px] border border-[#d0d6dc] bg-[#e6eaf0] p-4" type="text" name="username" placeholder="Username" />
 
                     <div className="estados flex w-full flex-row items-center justify-between">
-                        <label className="ml-5 font-semibold" htmlFor="estados">Estado:</label>
+                        <label className="ml-5 font-semibold" htmlFor="estados">Address:</label>
 
                         <select
-                            className="input h-12 min-w-40 rounded-[3px] border border-[#d0d6dc] bg-[#e6eaf0] px-4 text-center"
+                            className="input h-12 min-w-20 rounded-[3px] border border-[#d0d6dc] bg-[#e6eaf0] px-4 text-center"
                             name="Estados"
                             id="estados"
                             defaultValue=""
                             onChange={onEstadoChange}
                         >
-                            <option value="" disabled>Selecione o estado</option>
+                            <option value="" disabled>State</option>
                             
                             {/* O React desenha os <option> rodando um map() no array de estados */}
                             {listaEstados.map((estado) => (
                                 <option key={estado.id} value={estado.id}>
-                                    {estado.nome}
+                                    {estado.sigla}
                                 </option>
                             ))}
                         </select>
@@ -47,7 +47,7 @@ export const RegisterPage = ({
                                 id="cidades"
                                 defaultValue=""
                             >
-                                <option value="" disabled>Selecione a cidade</option>
+                                <option value="" disabled>City</option>
                                 
                                 {/* O mesmo map() para as cidades */}
                                 {listaCidades.map((cidade) => (

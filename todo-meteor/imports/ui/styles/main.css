@@ -356,3 +356,32 @@ a {
   opacity: 1;
   color: var(--color-primary);
 }
+
+
+.nav-links{
+  min-width: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  gap: 8px;
+}
+
+/* <button>teste</button> */
+
+.top-menu{
+  width: 100%;
+  color: white;
+  background-color: var(--color-primary);
+  z-index: 0;
+  position: absolute;
+  top: 100%; /*O top 100% faz com que o menu fique abaixo do elemento que o aciona, sem precisar de position: relative;*/
+}
+
+.top-menu >*{
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -2,18 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { useRegister } from "../hooks/useRegister.js";
 import { RegisterPage } from "./Register/RegisterPage.jsx";
-// Importe SOMENTE as funções que devolvem os dados da API
 import { recuperarListaDeEstados, recuperarListaDeCidades } from "../../api/methods/city&State.js";
 
 export const Register = () => {
 	const { register, error, loading } = useRegister();
 
-	// 1. Estados para controlar a tela
 	const [estadoSelecionado, setEstadoSelecionado] = useState("");
 	const [listaEstados, setListaEstados] = useState([]);
 	const [listaCidades, setListaCidades] = useState([]);
 
-	// 2. Busca os estados ao carregar a página
 	useEffect(() => {
 		recuperarListaDeEstados()
 			.then((dados) => setListaEstados(dados)) // Salva no React
@@ -47,7 +44,11 @@ export const Register = () => {
 	/** @param {React.FormEvent<HTMLFormElement>} event */
 	const handleRegister = async (event) => {
 		event.preventDefault();
-		const result = await register(buildRegisterData(event.currentTarget));
+		const registerData = buildRegisterData(event.currentTarget);
+
+		console.log("Dados que serao enviados:", registerData);
+
+		const result = await register(registerData);
 		if (result.success) {
 			event.currentTarget.reset();
 			setEstadoSelecionado("");
