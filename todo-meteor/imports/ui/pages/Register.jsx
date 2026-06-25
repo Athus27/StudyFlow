@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRegister } from "../hooks/useRegister.js";
 import { RegisterPage } from "./Register/RegisterPage.jsx";
-import { recuperarListaDeEstados, recuperarListaDeCidades } from "../../api/methods/city&State.js";
+import { recuperarListaDeEstados, recuperarListaDeCidades } from "../../api/locations/locations.js";
 
 export const Register = () => {
 	const { register, error, loading } = useRegister();

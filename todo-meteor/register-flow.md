@@ -6,7 +6,7 @@ flowchart TD
     D --> E["RegisterSchema.safeParse<br/>valida dados no front"]
     E -->|Dados invalidos| F["setState({ error, loading: false })"]
     E -->|Dados validos| G["Meteor.callAsync('users.register', validatedData)"]
-    G --> H["usersMethods.js<br/>Meteor.methods async users.register(data)"]
+    G --> H["imports/api/users/users.methods.js<br/>Meteor.methods async users.register(data)"]
     H --> I["Meteor.users.findOneAsync<br/>verifica email e username"]
     I -->|Email existe| J["throw new Meteor.Error<br/>E-mail ja esta em uso"]
     I -->|Username existe| K["throw new Meteor.Error<br/>Username ja esta em uso"]

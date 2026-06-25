@@ -1,4 +1,3 @@
-// imports/api/users/user.schema.js
 import { z } from "zod";
 
 export const RegisterSchema = z

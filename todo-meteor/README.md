@@ -176,7 +176,7 @@ className="h-10 rounded-[32px] border border-[#d0d6dc] bg-[#e6eaf0] px-4"
 O carregamento de estados fica em:
 
 ```text
-imports/api/methods/city&State.js
+imports/api/locations/locations.js
 ```
 
 Ele busca dados em:
@@ -201,29 +201,55 @@ document.getElementById("estados")
 
 ```text
 client/
-  main.jsx
-  main.css
+  main.html              # HTML base do Meteor
+  main.jsx               # entrada do cliente; importa CSS e startup/client
+  main.css               # CSS global carregado pelo cliente
 
 imports/
+  startup/
+    client/
+      index.js           # agrega configuracoes de inicializacao do cliente
+      render-app.jsx     # monta o React no #react-target
+      server-status.js   # exemplo de Meteor.call para testar o servidor
+    server/
+      index.js           # agrega API e fixtures do servidor
+      fixtures.js        # seed inicial do banco
   api/
-    collections/
-    methods/
-    publications/
-    schemas/
+    api.js               # agrega methods/publications da API
+    app/
+      methods.js         # methods gerais, como status.get
+    links/
+      links.collection.js
+      server/
+        publications.js
+    locations/
+      locations.js       # helpers para buscar estados/cidades no IBGE
+    users/
+      users.methods.js
+      users.schema.js
+      server/
+        publications.js
   ui/
+    App.jsx
     components/
     hooks/
     pages/
+    routes/
     styles/
 
 server/
-  main.js
-  methods.js
-  publications.js
+  main.js                # entrada do servidor; importa startup/server
 
 public/
 tests/
 ```
+
+Regra pratica:
+
+- `client/` e `server/` ficam pequenos e servem como entradas do Meteor.
+- `imports/startup/` contem o que precisa rodar quando cliente ou servidor iniciam.
+- `imports/api/` contem dados, regras de negocio, methods e publications.
+- `imports/ui/` contem React: paginas, componentes, hooks, rotas e estilos.
 
 ## Arquitetura geral
 
@@ -238,6 +264,8 @@ Camadas:
 - UI: componentes React e formularios.
 - Hook/Service: estado, loading, erro e chamadas Meteor.
 - API Methods: regra de negocio, validacao e autorizacao.
+- API Publications: dados publicados do servidor para o cliente.
+- Collections: definicao das colecoes Mongo usadas pela API.
 - Publications: leitura reativa autorizada.
 - MongoDB: persistencia.
 
